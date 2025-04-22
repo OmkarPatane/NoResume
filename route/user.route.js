@@ -6,36 +6,6 @@ const User = require('../model/user.model');
 const Trainer = require('../model/trainer.model');
 const auth = require('../middleware/auth');
 
-// User Signup
-// router.post('/signup', async (req, res) => {
-//   const { name, email, password, age, phone, trainer } = req.body;
-
-//   try {
-//     const exist = await User.findOne({ email });
-//     if (exist) return res.status(400).json({ msg: 'User already exists' });
-
-//     // If trainer provided, check if exists
-//     if (trainer) {
-//       const trainerExists = await Trainer.findById(trainer);
-//       if (!trainerExists) return res.status(400).json({ msg: 'Trainer not found' });
-//     }
-
-//     const hashed = await bcrypt.hash(password, 10);
-//     const newUser = new User({
-//       name,
-//       email,
-//       password: hashed,
-//       age,
-//       phone,
-//       trainer: trainer || null,
-//     });
-
-//     await newUser.save();
-//     res.status(201).json({ msg: 'User registered successfully' });
-//   } catch (err) {
-//     res.status(500).json({ msg: err.message });
-//   }
-// });
 
 // User Login
 router.post('/login', async (req, res) => {
